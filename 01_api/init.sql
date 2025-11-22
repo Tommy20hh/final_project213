@@ -1,44 +1,27 @@
-CREATE TABLE `movies` (
-  `id` int(11) NOT NULL,
-  `title` varchar(191) NOT NULL,
-  `year` int NOT NULL,
-  `genre` varchar(100) NOT NULL,
-  `poster` varchar(255) DEFAULT NULL,
-  `summary` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+DROP TABLE IF EXISTS movies;
 
-INSERT INTO movies (title, year, genre, summary, poster) VALUES
-('The Shawshank Redemption', 1994, 'Drama',
- 'Two imprisoned men bond over a number of years, finding solace and eventual redemption.',
- 'https://m.media-amazon.com/images/I/51NiGlapXlL._AC_.jpg'),
+CREATE TABLE movies (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255),
+    year INT,
+    genre VARCHAR(100),
+    poster VARCHAR(500),
+    summary TEXT
+);
 
-('The Godfather', 1972, 'Crime',
- 'The aging patriarch of an organized crime dynasty transfers control to his reluctant son.',
- 'https://m.media-amazon.com/images/I/41+eK8zBwQL._AC_.jpg'),
+INSERT INTO movies (title, year, genre, poster, summary) VALUES
+("The Shawshank Redemption", 1994, "Drama", "https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg", "Two imprisoned men bond over..."),
 
-('The Dark Knight', 2008, 'Action',
- 'Batman battles the Joker in a chaotic struggle for Gotham City.',
- 'https://m.media-amazon.com/images/I/51EbJjlxF-L._AC_.jpg'),
+("The Godfather", 1972, "Crime", "https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg", "The aging patriarch of an organized crime dynasty..."),
 
-('Pulp Fiction', 1994, 'Crime',
- 'The lives of two mob hitmen intertwine in shocking and comedic ways.',
- 'https://m.media-amazon.com/images/I/51U1Vf7pGxL._AC_.jpg'),
+("The Dark Knight", 2008, "Action", "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg", "When the menace known as the Joker wreaks havoc..."),
 
-('Forrest Gump', 1994, 'Drama',
- 'A simple man witnesses historic events while chasing his love for Jenny.',
- 'https://m.media-amazon.com/images/I/41cR4QK77JL._AC_.jpg'),
+("Pulp Fiction", 1994, "Crime", "https://image.tmdb.org/t/p/w500/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg", "The lives of two mob hitmen, a boxer..."),
 
-('Inception', 2010, 'Sci-Fi',
- 'A thief who enters dreams must perform inception—a dangerous and complex mission.',
- 'https://m.media-amazon.com/images/I/51v5ZpFyaFL._AC_.jpg'),
+("Forrest Gump", 1994, "Drama", "https://image.tmdb.org/t/p/w500/saHP97rTPS5eLmrLQEcANmKrsFl.jpg", "The presidencies of Kennedy and Johnson..."),
 
-('Interstellar', 2014, 'Sci-Fi',
- 'A team travels through a wormhole to secure a future for humanity.',
- 'https://m.media-amazon.com/images/I/71niXI3lxlL._AC_SL1178_.jpg'),
+("Inception", 2010, "Sci-Fi", "https://image.tmdb.org/t/p/w500/edv5CZvWj09upOsy2Y6IwDhK8bt.jpg", "A thief who steals corporate secrets using dream-sharing..."),
 
-('Parasite', 2019, 'Thriller',
- 'Two families become entangled in a dark social satire of class conflict.',
- 'https://m.media-amazon.com/images/I/81A7o5o9HLL._AC_SL1500_.jpg');
+("Interstellar", 2014, "Sci-Fi", "https://image.tmdb.org/t/p/w500/rAiYTfKGqDCRIIqo664sY9XZIvQ.jpg", "A team of explorers travel through a wormhole in space..."),
 
-ALTER TABLE `movies` ADD PRIMARY KEY (`id`);
-ALTER TABLE `movies` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+("Parasite", 2019, "Thriller", "https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg", "Greed and class discrimination threaten a symbiotic relationship...");
