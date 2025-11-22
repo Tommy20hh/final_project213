@@ -25,19 +25,6 @@ export default function Page() {
 
   return (
     <main style={{ padding: "20px" }}>
-      {/* Header */}
-      <div
-        style={{
-          background: "#111827",
-          padding: "20px",
-          borderRadius: "10px",
-          color: "white",
-          marginBottom: "25px",
-        }}
-      >
-        <h1 style={{ margin: 0, fontSize: "26px" }}>🎬 Movie App</h1>
-        <p style={{ margin: 0, opacity: 0.8 }}>DIT312 – Final Project</p>
-      </div>
 
       {/* Movies Grid */}
       <div
