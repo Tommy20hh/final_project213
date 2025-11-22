@@ -9,10 +9,10 @@ services:
     ports:
       - "3306:3306"
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
-      interval: 10s
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -uroot -proot"]
+      interval: 5s
       timeout: 5s
-      retries: 10
+      retries: 20
       start_period: 20s
 
   api:
@@ -31,8 +31,9 @@ services:
   frontend:
     build: ./02_frontend
     environment:
-      API_HOST: http://api:3001
+      NEXT_PUBLIC_API_HOST: http://api:3001
     depends_on:
-      - api
+      api:
+        condition: service_started
     ports:
       - "3000:3000"
